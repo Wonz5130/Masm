@@ -1,12 +1,12 @@
-;完整段的Hello World程序
-DATAS  SEGMENT
+;瀹屾暣娈电殑Hello World绋嬪簭
+DATA  SEGMENT
      STRING  DB  'Hello World!',13,10,'$'
-DATAS  ENDS
+DATA  ENDS
 
-CODES  SEGMENT
-     ASSUME    CS:CODES,DS:DATAS
+CODE  SEGMENT
+     ASSUME    CS:CODE,DS:DATA
 START:
-     MOV  AX,DATAS
+     MOV  AX,DATA
      MOV  DS,AX
      LEA  DX,STRING
      MOV  AH,9
@@ -14,5 +14,5 @@ START:
    
      MOV  AH,4CH
      INT  21H
-CODES  ENDS
+CODE  ENDS
     END   START
